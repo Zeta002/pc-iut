@@ -1,6 +1,8 @@
 package td4;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CompetitionCompetiteur {
     private ArrayList<Competiteur> playerBase;
@@ -23,5 +25,9 @@ public class CompetitionCompetiteur {
         } else {
             System.out.println("Il n'y à pas de vainqueur.");
         }
+    }
+
+    public void sortByScore() {
+        playerBase.sort(Comparator.comparing(Competiteur::getScore).reversed());
     }
 }
